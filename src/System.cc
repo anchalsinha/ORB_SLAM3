@@ -1526,19 +1526,19 @@ Frame System::GetCurrentFrame()
 vector<KeyFrame*> System::GetAllKeyFrames()
 {
     unique_lock<mutex> lock(mMutexState);
-    return mAtlas->GetAllKeyFrames();
+    return mpAtlas->GetAllKeyFrames();
 }
 
 vector<MapPoint*> System::GetAllMapPoints()
 {
     unique_lock<mutex> lock(mMutexState);
-    return mAtlas->GetAllMapPoints();
+    return mpAtlas->GetAllMapPoints();
 }
 
 vector<MapPoint*> System::GetReferenceMapPoints()
 {
     unique_lock<mutex> lock(mMutexState);
-    return mAtlas->GetReferenceMapPoints();
+    return mpAtlas->GetReferenceMapPoints();
 }
 
 } //namespace ORB_SLAM
