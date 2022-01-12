@@ -1517,5 +1517,29 @@ string System::CalculateCheckSum(string filename, int type)
     return checksum;
 }
 
+Frame System::GetCurrentFrame()
+{
+    unique_lock<mutex> lock(mMutexState);
+    return mpTracker->mCurrentFrame;
+}
+
+vector<KeyFrame*> System::GetAllKeyFrames()
+{
+    unique_lock<mutex> lock(mMutexState);
+    return mAtlas->GetAllKeyFrames();
+}
+
+vector<MapPoint*> System::GetAllMapPoints()
+{
+    unique_lock<mutex> lock(mMutexState);
+    return mAtlas->GetAllMapPoints();
+}
+
+vector<MapPoint*> System::GetReferenceMapPoints()
+{
+    unique_lock<mutex> lock(mMutexState);
+    return mAtlas->GetReferenceMapPoints();
+}
+
 } //namespace ORB_SLAM
 

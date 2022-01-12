@@ -180,6 +180,11 @@ public:
 
     float GetImageScale();
 
+    Frame GetCurrentFrame();
+    vector<KeyFrame*> GetAllKeyFrames();
+    vector<MapPoint*> GetAllMapPoints();
+    vector<MapPoint*> GetReferenceMapPoints();
+
 #ifdef REGISTER_TIMES
     void InsertRectTime(double& time);
     void InsertResizeTime(double& time);
